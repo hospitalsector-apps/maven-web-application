@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.111.170.182:9980/dannyreddy/repository/Apollohospital-release/</url>
+	      <url>http://43.205.146.218:9980/dannyreddy/repository/Apollohospital-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-		    <url>http://3.111.170.182:9980/dannyreddy/repository/Apollohospital-snapshot/</url>
+		    <url>http://43.205.146.218:9980/dannyreddy/repository/Apollohospital-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
