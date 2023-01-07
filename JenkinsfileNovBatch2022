@@ -13,7 +13,7 @@ try{
 sendSlackNotifications("STARTED")
 
 stage( 'CheckoutCode' ){
-git branch: 'development', credentialsId: '266a6eaa-7043-46cd-afac-f5caef7bce8e', url: 'https://github.com/hospitalsector-apps/maven-web-application.git'
+git branch: 'developmen', credentialsId: '266a6eaa-7043-46cd-afac-f5caef7bce8e', url: 'https://github.com/hospitalsector-apps/maven-web-application.git'
 }
 
 stage(' Build' ){
