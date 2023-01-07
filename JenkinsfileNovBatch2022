@@ -10,8 +10,6 @@ echo"The Jenkins Home directory is: ${JENKINS_HOME}"
 def mavenHome = tool name: "maven3.8.6"
 
 try{
-sendsSlackNotifications("STARTED")
-
 stage( 'CheckoutCode' ){
 git branch: 'development', credentialsId: '266a6eaa-7043-46cd-afac-f5caef7bce8e', url: 'https://github.com/hospitalsector-apps/maven-web-application.git'
 }
@@ -30,7 +28,7 @@ sh "${mavenHome}/bin/mvn deploy"
 
 stage('DeployAppIntoTomcatServer'){
 sshagent(['cf3b31e0-d288-4a0b-956f-390f00e9ca10']) {
-  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@43.205.240.75:/opt/apache-tomcat-9.0.70/webapps/"
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@43.205.240.75:/opt/apache-tomcat-9.0.70/webapps/"
 }
 }
 
@@ -40,7 +38,7 @@ catch(e){
 currentBuild.result = "FAILURE"
 }
 finally{
-sendsSlackNotifications(currentBuild.result)
+sendSlackNotifications(currentBuild.result)
 }
 
 }
